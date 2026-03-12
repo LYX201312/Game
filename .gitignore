@@ -3,3 +3,6 @@ Game.debug
 Game.exe
 Game.o
 Game.layout
+Game_private.h
+Game_private.rc
+Game_private.res
