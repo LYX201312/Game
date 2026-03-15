@@ -1,7 +1,7 @@
 Game.bookmarks
 Game.debug
 Game.exe
-Game.o
+main.o
 Game.layout
 Game_private.h
 Game_private.rc
