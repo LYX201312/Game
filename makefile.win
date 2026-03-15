@@ -12,11 +12,10 @@ CXXINCS  =
 CXXFLAGS = $(CXXINCS) "-O2" "-pipe"
 CFLAGS   = $(INCS) "-O2" "-pipe"
 WINDRESFLAGS = 
-RES      = Game_private.res
-OBJ      = main.o $(RES)
+OBJ      = main.o
 BIN      = Game.exe
-LINKOBJ  = "main.o" "Game_private.res"
-CLEANOBJ = "main.o" "Game_private.res" "Game.exe"
+LINKOBJ  = "main.o"
+CLEANOBJ = "main.o" "Game.exe"
 
 .PHONY: all all-before all-after clean clean-custom
 
@@ -30,8 +29,4 @@ Game.exe: $(OBJ)
 	$(CXX) $(LINKOBJ) -o "Game.exe" $(LIBS)
 
 main.o: main.cpp
-	$(CXX) -c "main.cpp" -o "main.o" $(CXXFLAGS) 
-
-Game_private.res: Game_private.rc 
-	$(WINDRES) -i "Game_private.rc" --input-format=rc -o "Game_private.res" -O coff $(WINDRESFLAGS) 
-
+	$(CXX) -c "main.cpp" -o "main.o" $(CXXFLAGS)  -finput-charset=UTF-8 -fexec-charset=gbk
